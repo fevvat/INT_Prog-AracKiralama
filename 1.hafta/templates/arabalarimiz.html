@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabalarımız - ASLAN Oto Kiralama TR</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/arabalarimiz.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="/">
+                <img src="{{ url_for('static', filename='resimler/aslan_logo.png') }}" alt="ASLAN Car Rental Logo" height="30" class="d-inline-block align-middle me-2">
+                ASLAN Oto Kiralama
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/arabalarimiz">Arabalarımız</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/iletisim">Ulaşın</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary ms-lg-3" href="/giris">Giriş</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5 bg-light mt-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold text-secondary">Tüm Arabalarımız</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <div class="col">
+                    <div class="card h-100 shadow-sm car-card">
+                        <img src="{{ url_for('static', filename='resimler/f-citroen-c3.png') }}" class="card-img-top" alt="Citroen C3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Citroen C3</h5>
+                            <p class="card-text text-muted small">Ekonomik Sınıf</p>
+                            <button class="rent-button" onclick="openRentalForm('Citroen C3')">Hemen Kirala <i class="bi bi-arrow-right-circle-fill"></i></button>
+                        </div>
+                        <div class="car-features">
+                            <h6 class="fw-bold text-muted">Özellikler</h6>
+                            <ul>
+                                <li><i class="bi bi-people-fill"></i> 5 Kişilik</li>
+                                <li><i class="bi bi-briefcase-fill"></i> 2 Bagaj</li>
+                                <li><i class="bi bi-airbag-fill"></i> Hava Yastığı</li>
+                                <li><i class="bi bi-shield-fill-check"></i> ABS</li>
+                                <li><i class="bi bi-droplet-fill"></i> Benzin</li>
+                                <li><i class="bi bi-gear-fill"></i> Otomatik</li>
+                            </ul>
+                        </div>
+                        <div id="rentalFormCitroenC3" class="rental-form-overlay">
+                            <div class="rental-form">
+                                <button class="close-button" onclick="closeRentalForm('Citroen C3')">&times;</button>
+                                <h5>Citroen C3 Kiralama</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pickupLocation">Alış Yeri</label>
+                                        <input type="text" class="form-control" id="pickupLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffLocation">Dönüş Yeri</label>
+                                        <input type="text" class="form-control" id="dropoffLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pickupDate">Alış Tarihi</label>
+                                        <input type="date" class="form-control" id="pickupDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffDate">Dönüş Tarihi</label>
+                                        <input type="date" class="form-control" id="dropoffDate">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-rent-submit">Araç Ara</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm car-card">
+                        <img src="{{ url_for('static', filename='resimler/n-fiat-egea.png') }}" class="card-img-top" alt="Fiat Egea">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Fiat Egea</h5>
+                            <p class="card-text text-muted small">Ekonomik Sınıf</p>
+                            <button class="rent-button" onclick="openRentalForm('Fiat Egea')">Hemen Kirala <i class="bi bi-arrow-right-circle-fill"></i></button>
+                        </div>
+                        <div class="car-features">
+                            <h6 class="fw-bold text-muted">Özellikler</h6>
+                            <ul>
+                                <li><i class="bi bi-people-fill"></i> 5 Kişilik</li>
+                                <li><i class="bi bi-briefcase-fill"></i> 2 Bagaj</li>
+                                <li><i class="bi bi-airbag-fill"></i> Hava Yastığı</li>
+                                <li><i class="bi bi-shield-fill-check"></i> ABS</li>
+                                <li><i class="bi bi-droplet-fill"></i> Dizel/Benzin</li>
+                                <li><i class="bi bi-gear"></i> Manuel</li>
+                            </ul>
+                        </div>
+                        <div id="rentalFormFiatEgea" class="rental-form-overlay">
+                            <div class="rental-form">
+                                <button class="close-button" onclick="closeRentalForm('Fiat Egea')">&times;</button>
+                                <h5>Fiat Egea Kiralama</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pickupLocation">Alış Yeri</label>
+                                        <input type="text" class="form-control" id="pickupLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffLocation">Dönüş Yeri</label>
+                                        <input type="text" class="form-control" id="dropoffLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pickupDate">Alış Tarihi</label>
+                                        <input type="date" class="form-control" id="pickupDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffDate">Dönüş Tarihi</label>
+                                        <input type="date" class="form-control" id="dropoffDate">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-rent-submit">Araç Ara</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm car-card">
+                        <img src="{{ url_for('static', filename='resimler/o-ford-focus.png') }}" class="card-img-top" alt="Ford Focus">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Ford Focus</h5>
+                            <p class="card-text text-muted small">Orta Sınıf</p>
+                            <button class="rent-button" onclick="openRentalForm('Ford Focus')">Hemen Kirala <i class="bi bi-arrow-right-circle-fill"></i></button>
+                        </div>
+                        <div class="car-features">
+                            <h6 class="fw-bold text-muted">Özellikler</h6>
+                            <ul>
+                                <li><i class="bi bi-people-fill"></i> 5 Kişilik</li>
+                                <li><i class="bi bi-briefcase-fill"></i> 3 Bagaj</li>
+                                <li><i class="bi bi-airbag-fill"></i> Yan Hava Yastığı</li>
+                                <li><i class="bi bi-shield-fill-check"></i> ESP</li>
+                                <li><i class="bi bi-droplet-fill"></i> Benzin</li>
+                                <li><i class="bi bi-gear"></i> Manuel</li>
+                            </ul>
+                        </div>
+                        <div id="rentalFormFordFocus" class="rental-form-overlay">
+                            <div class="rental-form">
+                                <button class="close-button" onclick="closeRentalForm('Ford Focus')">&times;</button>
+                                <h5>Ford Focus Kiralama</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pickupLocation">Alış Yeri</label>
+                                        <input type="text" class="form-control" id="pickupLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffLocation">Dönüş Yeri</label>
+                                        <input type="text" class="form-control" id="dropoffLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pickupDate">Alış Tarihi</label>
+                                        <input type="date" class="form-control" id="pickupDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffDate">Dönüş Tarihi</label>
+                                        <input type="date" class="form-control" id="dropoffDate">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-rent-submit">Araç Ara</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm car-card">
+                        <img src="{{ url_for('static', filename='resimler/bmw.png') }}" class="card-img-top" alt="BMW">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">BMW</h5>
+                            <p class="card-text text-muted small">Lüks Sınıf</p>
+                            <button class="rent-button" onclick="openRentalForm('BMW')">Hemen Kirala <i class="bi bi-arrow-right-circle-fill"></i></button>
+                        </div>
+                        <div class="car-features">
+                            <h6 class="fw-bold text-muted">Özellikler</h6>
+                            <ul>
+                                <li><i class="bi bi-people-fill"></i> 5 Kişilik</li>
+                                <li><i class="bi bi-briefcase-fill"></i> 3 Bagaj</li>
+                                <li><i class="bi bi-airbag-fill"></i> Çoklu Hava Yastığı</li>
+                                <li><i class="bi bi-shield-fill-check"></i> ABS, ESP, TCS</li>
+                                <li><i class="bi bi-droplet-fill"></i> Benzin</li>
+                                <li><i class="bi bi-gear-fill"></i> Otomatik</li>
+                            </ul>
+                        </div>
+                        <div id="rentalFormBMW" class="rental-form-overlay">
+                            <div class="rental-form">
+                                <button class="close-button" onclick="closeRentalForm('BMW')">&times;</button>
+                                <h5>BMW Kiralama</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pickupLocation">Alış Yeri</label>
+                                        <input type="text" class="form-control" id="pickupLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffLocation">Dönüş Yeri</label>
+                                        <input type="text" class="form-control" id="dropoffLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pickupDate">Alış Tarihi</label>
+                                        <input type="date" class="form-control" id="pickupDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffDate">Dönüş Tarihi</label>
+                                        <input type="date" class="form-control" id="dropoffDate">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-rent-submit">Araç Ara</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm car-card">
+                        <img src="{{ url_for('static', filename='resimler/tiggo7.png') }}" class="card-img-top" alt="Chery Tiggo 7">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Chery Tiggo 7</h5>
+                            <p class="card-text text-muted small">Kompakt SUV</p>
+                            <button class="rent-button" onclick="openRentalForm('Chery Tiggo 7')">Hemen Kirala <i class="bi bi-arrow-right-circle-fill"></i></button>
+                        </div>
+                        <div class="car-features">
+                            <h6 class="fw-bold text-muted">Özellikler</h6>
+                            <ul>
+                                <li><i class="bi bi-people-fill"></i> 5 Kişilik</li>
+                                <li><i class="bi bi-briefcase-fill"></i> Geniş Bagaj</li>
+                                <li><i class="bi bi-airbag-fill"></i> Çoklu Hava Yastığı</li>
+                                <li><i class="bi bi-shield-fill-check"></i> ABS, ESP</li>
+                                <li><i class="bi bi-droplet-fill"></i> Benzin</li>
+                                <li><i class="bi bi-gear-fill"></i> Otomatik</li>
+                            </ul>
+                        </div>
+                        <div id="rentalFormCheryTiggo7" class="rental-form-overlay">
+                            <div class="rental-form">
+                                <button class="close-button" onclick="closeRentalForm('Chery Tiggo 7')">&times;</button>
+                                <h5>Chery Tiggo 7 Kiralama</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pickupLocation">Alış Yeri</label>
+                                        <input type="text" class="form-control" id="pickupLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffLocation">Dönüş Yeri</label>
+                                        <input type="text" class="form-control" id="dropoffLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pickupDate">Alış Tarihi</label>
+                                        <input type="date" class="form-control" id="pickupDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffDate">Dönüş Tarihi</label>
+                                        <input type="date" class="form-control" id="dropoffDate">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-rent-submit">Araç Ara</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm car-card">
+                        <img src="{{ url_for('static', filename='resimler/polo.png') }}" class="card-img-top" alt="Volkswagen Polo">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Volkswagen Polo</h5>
+                            <p class="card-text text-muted small">Şehir Aracı</p>
+                            <button class="rent-button" onclick="openRentalForm('Volkswagen Polo')">Hemen Kirala <i class="bi bi-arrow-right-circle-fill"></i></button>
+                        </div>
+                        <div class="car-features">
+                            <h6 class="fw-bold text-muted">Özellikler</h6>
+                            <ul>
+                                <li><i class="bi bi-people-fill"></i> 5 Kişilik</li>
+                                <li><i class="bi bi-briefcase-fill"></i> Orta Bagaj</li>
+                                <li><i class="bi bi-airbag-fill"></i> Hava Yastığı</li>
+                                <li><i class="bi bi-shield-fill-check"></i> ABS</li>
+                                <li><i class="bi bi-droplet-fill"></i> Benzin</li>
+                                <li><i class="bi bi-gear"></i> Manuel</li>
+                            </ul>
+                        </div>
+                        <div id="rentalFormVolkswagenPolo" class="rental-form-overlay">
+                            <div class="rental-form">
+                                <button class="close-button" onclick="closeRentalForm('Volkswagen Polo')">&times;</button>
+                                <h5>Volkswagen Polo Kiralama</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pickupLocation">Alış Yeri</label>
+                                        <input type="text" class="form-control" id="pickupLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffLocation">Dönüş Yeri</label>
+                                        <input type="text" class="form-control" id="dropoffLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pickupDate">Alış Tarihi</label>
+                                        <input type="date" class="form-control" id="pickupDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffDate">Dönüş Tarihi</label>
+                                        <input type="date" class="form-control" id="dropoffDate">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-rent-submit">Araç Ara</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm car-card">
+                        <img src="{{ url_for('static', filename='resimler/skoda.png') }}" class="card-img-top" alt="Skoda Octavia">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Skoda Octavia</h5>
+                            <p class="card-text text-muted small">Aile Aracı</p>
+                            <button class="rent-button" onclick="openRentalForm('Skoda Octavia')">Hemen Kirala <i class="bi bi-arrow-right-circle-fill"></i></button>
+                        </div>
+                        <div class="car-features">
+                            <h6 class="fw-bold text-muted">Özellikler</h6>
+                            <ul>
+                                <li><i class="bi bi-people-fill"></i> 5 Kişilik</li>
+                                <li><i class="bi bi-briefcase-fill"></i> Geniş Bagaj</li>
+                                <li><i class="bi bi-airbag-fill"></i> Yan Hava Yastığı</li>
+                                <li><i class="bi bi-shield-fill-check"></i> ABS, ESP</li>
+                                <li><i class="bi bi-droplet-fill"></i> Dizel</li>
+                                <li><i class="bi bi-gear-fill"></i> Otomatik</li>
+                            </ul>
+                        </div>
+                        <div id="rentalFormSkodaOctavia" class="rental-form-overlay">
+                            <div class="rental-form">
+                                <button class="close-button" onclick="closeRentalForm('Skoda Octavia')">&times;</button>
+                                <h5>Skoda Octavia Kiralama</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pickupLocation">Alış Yeri</label>
+                                        <input type="text" class="form-control" id="pickupLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffLocation">Dönüş Yeri</label>
+                                        <input type="text" class="form-control" id="dropoffLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pickupDate">Alış Tarihi</label>
+                                        <input type="date" class="form-control" id="pickupDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffDate">Dönüş Tarihi</label>
+                                        <input type="date" class="form-control" id="dropoffDate">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-rent-submit">Araç Ara</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm car-card">
+                        <img src="{{ url_for('static', filename='resimler/audia6.png') }}" class="card-img-top" alt="Audi A6">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Audi A6</h5>
+                            <p class="card-text text-muted small">Lüks Sedan</p>
+                            <button class="rent-button" onclick="openRentalForm('Audi A6')">Hemen Kirala <i class="bi bi-arrow-right-circle-fill"></i></button>
+                        </div>
+                        <div class="car-features">
+                            <h6 class="fw-bold text-muted">Özellikler</h6>
+                            <ul>
+                                <li><i class="bi bi-people-fill"></i> 5 Kişilik</li>
+                                <li><i class="bi bi-briefcase-fill"></i> Büyük Bagaj</li>
+                                <li><i class="bi bi-airbag-fill"></i> Gelişmiş Hava Yastığı</li>
+                                <li><i class="bi bi-shield-fill-check"></i> ABS, ESP, Çekiş Kontrol</li>
+                                <li><i class="bi bi-droplet-fill"></i> Benzin/Dizel</li>
+                                <li><i class="bi bi-gear-fill"></i> Otomatik</li>
+                            </ul>
+                        </div>
+                        <div id="rentalFormAudiA6" class="rental-form-overlay">
+                            <div class="rental-form">
+                                <button class="close-button" onclick="closeRentalForm('Audi A6')">&times;</button>
+                                <h5>Audi A6 Kiralama</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pickupLocation">Alış Yeri</label>
+                                        <input type="text" class="form-control" id="pickupLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffLocation">Dönüş Yeri</label>
+                                        <input type="text" class="form-control" id="dropoffLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pickupDate">Alış Tarihi</label>
+                                        <input type="date" class="form-control" id="pickupDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffDate">Dönüş Tarihi</label>
+                                        <input type="date" class="form-control" id="dropoffDate">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-rent-submit">Araç Ara</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 shadow-sm car-card">
+                        <img src="{{ url_for('static', filename='resimler/togg.png') }}" class="card-img-top" alt="Togg T10X">
+                        <div class="card-body text-center">
+                            <h5 class="card-title fw-bold">Togg T10X</h5>
+                            <p class="card-text text-muted small">Elektrikli SUV</p>
+                            <button class="rent-button" onclick="openRentalForm('Togg T10X')">Hemen Kirala <i class="bi bi-arrow-right-circle-fill"></i></button>
+                        </div>
+                        <div class="car-features">
+                            <h6 class="fw-bold text-muted">Özellikler</h6>
+                            <ul>
+                                <li><i class="bi bi-people-fill"></i> 5 Kişilik</li>
+                                <li><i class="bi bi-briefcase-fill"></i> Geniş Bagaj</li>
+                                <li><i class="bi bi-airbag-fill"></i> Çoklu Hava Yastığı</li>
+                                <li><i class="bi bi-shield-fill-check"></i> ABS, ESP, Akıllı Sürüş</li>
+                                <li><i class="bi bi-lightning-fill"></i> Elektrik</li>
+                                <li><i class="bi bi-gear-fill"></i> Otomatik</li>
+                            </ul>
+                        </div>
+                        <div id="rentalFormToggT10X" class="rental-form-overlay">
+                            <div class="rental-form">
+                                <button class="close-button" onclick="closeRentalForm('Togg T10X')">&times;</button>
+                                <h5>Togg T10X Kiralama</h5>
+                                <form>
+                                    <div class="form-group">
+                                        <label for="pickupLocation">Alış Yeri</label>
+                                        <input type="text" class="form-control" id="pickupLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffLocation">Dönüş Yeri</label>
+                                        <input type="text" class="form-control" id="dropoffLocation" placeholder="Şehir veya Havaalanı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="pickupDate">Alış Tarihi</label>
+                                        <input type="date" class="form-control" id="pickupDate">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="dropoffDate">Dönüş Tarihi</label>
+                                        <input type="date" class="form-control" id="dropoffDate">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-rent-submit">Araç Ara</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-dark text-light text-center">
+        <div class="container">
+            <p>&copy; 2025 ASLAN Oto Kiralama - Bütün Hakları Saklıdır.</p>
+            <p class="mt-2">
+                <a href="tel:+90XXXXXXXXX" class="text-muted me-3"><i class="bi bi-telephone-fill me-1"></i> +90 XXX XXX XX XX</a>
+                <a href="mailto:info@aslancarrental.com" class="text-muted me-3"><i class="bi bi-envelope-fill me-1"></i> info@aslancarrental.com</a>
+            </p>
+            <div class="mt-3">
+                <a href="#" class="text-muted me-3"><i class="bi bi-facebook fs-5"></i></a>
+                <a href="#" class="text-muted me-3"><i class="bi bi-twitter fs-5"></i></a>
+                <a href="#" class="text-muted me-3"><i class="bi bi-instagram fs-5"></i></a>
+            </div>
+            <ul class="list-inline mt-2">
+                <li class="list-inline-item"><a href="#" class="text-muted">Gizlilik</a></li>
+                <li class="list-inline-item"><a href="#" class="text-muted">Kullanım Şartları</a></li>
+                <li class="list-inline-item"><a href="/kiralama-kosullari" class="text-muted">Kiralama Koşulları</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function openRentalForm(carName) {
+            document.getElementById('rentalForm' + carName.replace(/\s/g, '')).style.display = 'block';
+        }
+
+        function closeRentalForm(carName) {
+            document.getElementById('rentalForm' + carName.replace(/\s/g, '')).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
